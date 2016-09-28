@@ -70,4 +70,17 @@ public class EmailController {
             return "error";
         }
     }
+    
+    
+    public String pruebaControlador(){
+    
+        
+            if ("ok".equals(asunto)){
+            return this.asunto;}else return "El asunto no sirve";
+    
+    }
+            
+            
 }
+
+
