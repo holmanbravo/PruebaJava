@@ -27,6 +27,7 @@ public class Email {
     private String emailRemitente;
     private String passRemitente;
     private String emailDestinatario;
+    private String otros;
       
     
     private Session session;
@@ -106,5 +107,16 @@ public class Email {
     public void setEmailDestinatario(String emailDestinatario) {
         this.emailDestinatario = emailDestinatario;
     }
+
+    public String getOtros() {
+        return otros;
+    }
+
+    public void setOtros(String otros) {
+        this.otros = otros;
+    }
     
+    
+   
+     
 }

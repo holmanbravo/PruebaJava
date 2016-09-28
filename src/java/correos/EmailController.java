@@ -70,4 +70,8 @@ public class EmailController {
             return "error";
         }
     }
+    
+    public void saludo(){
+        System.out.println("Hello World");
+    }
 }
