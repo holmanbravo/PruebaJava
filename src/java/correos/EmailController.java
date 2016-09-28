@@ -71,6 +71,7 @@ public class EmailController {
         }
     }
     
+
     
     public String pruebaControlador(){
     
@@ -81,6 +82,11 @@ public class EmailController {
     }
             
             
+
+    public void saludo(){
+        System.out.println("Hello World");
+    }
+
 }
 
 
