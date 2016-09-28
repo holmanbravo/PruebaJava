@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form class="container btn-group">
+                    <!--opciones del formulario-->
+                 <nav class="navbar navbar-default">
+                       <div class="container-fluid">
+                           <div class="navbar-header">
+                    <div class="btn-group" role="group" aria-label="..." style="margin:13px;">
+                        <h:commandButton value="Crear" id="Guardar"  type="submit" class="btn btn-primary" action="#{emailController.enviarMensaje()}"></h:commandButton>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." style="margin:13px;">           
+                        <button   value="Cancelar" id="CancelarCreacion" type="button" class="btn btn-primary"><a href="../inicio.xhtml">Cancelar</a></button>
+                    </div>
+                   </div>
+                </div>                     
+        <div class= "col-xs-6">
+            <div class="col-sm-4">
+            <label id="SegundoNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap"></p>usuario</label>
+            </div>
+            <div class="col-sm-6">
+                <h:inputText  maxlength="30" required="true" value="#{emailController.email.asunto}" ></h:inputText>
+            </div>
+        </div>
+         <div class= "col-xs-6">
+            <div class="col-sm-4">
+            <label id="SegundoNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap"></p>Contraseña</label>
+            </div>
+            <div class="col-sm-6">
+                <h:inputTextarea   required="true" value="#{emailController.email.contenido}" ></h:inputTextarea>
+            </div>
+        </div>
+        <div class= "col-xs-6">
+    <div class="col-sm-4">
+    <label id="Cargo" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap">Cargo</p></label>
+     </div>
+    <div class="col-sm-6">
+        <p:selectOneMenu  style="width:245px" required="true" value="#{emailController.email.emailDestinatario}">
+            <f:selectItems value="#{usuarioControlador.itemsAvailableSelectOne}"/>
+      </p:selectOneMenu>
+    </div>
+        </div></nav>
+                     
+                     
+         </h:form>
+    </h:body>
+</html>
+

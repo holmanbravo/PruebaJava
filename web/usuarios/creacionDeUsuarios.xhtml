@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <h:form class="container btn-group">
+             
+ <nav>   <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="faces/usuarios/creacionDeUsuarios.xhtml"><span class="glyphicon glyphicon-home"></span>Crear</a></li>
+        <li><a href="faces/usuarios/actualizacionUsuarios.xhtml"><span class="glyphicon glyphicon-home"></span>Actualizar</a></li>
+          <li><a href="faces/usuarios/eliminarUsuarios.xhtml"><span class="glyphicon glyphicon-home"></span>Borrar</a></li>
+        </ul>
+    </div>    
+</nav>
+             
+             
+                    <!--opciones del formulario-->
+                 <nav class="navbar navbar-default">
+                       <div class="container-fluid">
+                           <div class="navbar-header">
+                    <div class="btn-group" role="group" aria-label="..." style="margin:13px;">
+                        <h:commandButton value="Crear" id="Guardar"  type="submit" class="btn btn-primary" action="#{usuarioControlador.crearUsuario()}"></h:commandButton>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." style="margin:13px;">           
+                        <button   value="Cancelar" id="CancelarCreacion" type="button" class="btn btn-primary"><a href="../inicio.xhtml">Cancelar</a></button>
+                    </div>
+                   </div>
+                </div>                     
+              </nav>
+                   <div class= "col-xs-6">
+                        <div class="col-sm-4">
+                            <label id="PrimerNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap">NombreCompleto</p></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <h:inputText   maxlength="80" required="true"  value="#{usuarioControlador.usuario.nombreCompleto}" requiredMessage="Se debe ingresar un Primer Nombre" validatorMessage="El primer nombre debe contener minimo 3 caracteres"><f:validateLength for="barrio" minimum="5" maximum="80"></f:validateLength></h:inputText>
+                        </div>
+                    </div>
+                <div class= "col-xs-6">
+                    <div class="col-sm-4">
+                        <label id="PrimerApellido" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap">identificacion</p></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <h:inputText   maxlength="15"  required="true" value="#{usuarioControlador.usuario.identificacion}" requiredMessage="Se debe ingresar un Primer Apellido" validatorMessage="El primer apellido debe contener minimo 3 caracteres"><f:validateLength for="Primer Apellido" minimum="5" maximum="15"></f:validateLength></h:inputText>
+                    </div>
+                </div>
+        <div class= "col-xs-6">
+            <div class="col-sm-4">
+            <label id="SegundoNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap"></p>Correo</label>
+            </div>
+            <div class="col-sm-6">
+                <h:inputText  maxlength="30" required="true" value="#{usuarioControlador.usuario.correo}" ></h:inputText>
+            </div>
+        </div>
+        <div class= "col-xs-6">
+            <div class="col-sm-4">
+            <label id="SegundoNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap"></p>usuario</label>
+            </div>
+            <div class="col-sm-6">
+                <h:inputText  maxlength="30" required="true" value="#{usuarioControlador.usuario.idusuario}" ></h:inputText>
+            </div>
+        </div>
+         <div class= "col-xs-6">
+            <div class="col-sm-4">
+            <label id="SegundoNombre" class="col-sm-1 control-label Fuente_Label"><p class="text-nowrap"></p>Contraseña</label>
+            </div>
+            <div class="col-sm-6">
+                <h:inputText  maxlength="30" required="true" value="#{usuarioControlador.usuario.contrasena}" ></h:inputText>
+            </div>
+        </div>
+         </h:form>
+    </h:body>
+</html>
+
